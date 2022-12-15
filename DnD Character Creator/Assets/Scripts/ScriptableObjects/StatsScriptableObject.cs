@@ -20,7 +20,7 @@ public class StatsScriptableObject : ScriptableObject
         return classPrefab;
     }*/
 
-    public string GetClassName()
+    public string GetName()
     {
         return thisName;
     }

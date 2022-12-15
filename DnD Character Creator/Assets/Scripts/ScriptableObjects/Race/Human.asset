@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 495dd828e935c7943819ab52ee92002c, type: 3}
-  m_Name: New Race
+  m_Name: Human
   m_EditorClassIdentifier: 
-  thisName: 
+  thisName: Human
   strength: 0
   movement: 0
   charm: 0
   intelligence: 0
   mystic: 0
   racePrefabs: []
+  myClass: 0
+  myRace: 0

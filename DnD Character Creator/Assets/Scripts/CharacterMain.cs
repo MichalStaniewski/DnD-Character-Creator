@@ -12,65 +12,92 @@ public class CharacterMain : MonoBehaviour
 
     private Dictionary<string, RaceScriptableObject> raceDict = new Dictionary<string, RaceScriptableObject>();
 
-    private int classNum = 5;
-
-    private RaceScriptableObject test;
-
     [SerializeField] private int classIndex = 0;    
     [SerializeField] private int raceIndex = 0;
+
+    [SerializeField] private int maxClassIndex = 0; 
+    [SerializeField] private int maxRaceIndex = 0;
+
+    [SerializeField] private ClassScriptableObject currentClass;
+    [SerializeField] private RaceScriptableObject currentRace;
+
 
     private void Awake()
     {
         foreach (ClassScriptableObject _class in availableClasses)
         {
-            classDict.Add(_class.GetClassName(), _class);
+            classDict.Add(_class.GetName(), _class);
         }
 
         foreach (RaceScriptableObject _race in availableRaces)
         {
-            raceDict.Add(_race.GetClassName(), _race);
+            raceDict.Add(_race.GetName(), _race);
+        }
+
+        if (availableClasses.Count == 0 || availableRaces.Count == 0)
+        {
+            Debug.LogError("AvailableClasses or Available Races have not been populated!");
+            return;
+        }
+        else
+        {
+            maxClassIndex = availableClasses.Count - 1;
+            maxRaceIndex = availableRaces.Count - 1;
+
+            currentClass = availableClasses[0];
+            currentRace = availableRaces[0];
         }
     }
 
-    private void UpdateClassIndex()
+    private void UpdateRace()
     {
-        //change visual
-    } 
+        currentRace = availableRaces[raceIndex];
+    }
 
-    private void UpdateRaceIndex()
+    private void UpdateClass()
     {
-        
+        currentClass = availableClasses[classIndex];
     }
 
     public void ChangeClassIndex(int _val)
     {
-        if ((classIndex += _val) > availableClasses.Count)
+        classIndex += _val;
+
+        if (classIndex > maxClassIndex)
         {
             classIndex = 0;
         }
-        else if ((classIndex += _val) < 0)
+
+        if (classIndex < 0)
         {
-            classIndex = availableClasses.Count;
+            classIndex = maxClassIndex;
         }
-        else
-        {
-            classIndex += _val;
-        }        
+        UpdateClass();
     }
     
     public void ChangeRaceIndex(int _val)
     {
-        if ((raceIndex += _val) > availableRaces.Count)
+        raceIndex += _val;
+
+        if (raceIndex > maxRaceIndex)
         {
             raceIndex = 0;
         }
-        else if ((raceIndex += _val) < 0)
+
+        if (raceIndex < 0)
         {
-            raceIndex = availableRaces.Count;
+            raceIndex = maxRaceIndex;
         }
-        else
-        {
-            raceIndex += _val;
-        }
+
+        UpdateRace();
+    }
+    public string GetRaceName()
+    {
+        return currentRace.GetName();
+    }
+
+    public string GetClassName()
+    {
+        return currentClass.GetName();
     }
 }

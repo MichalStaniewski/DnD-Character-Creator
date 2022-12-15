@@ -57,6 +57,25 @@ public class RaceScriptableObject : StatsScriptableObject
         }
     }
 
+    public RaceClass GetRaceFromIndex(int _index)
+    {
+        switch (_index)
+        {
+            case 0:
+                return RaceClass.Barbarian;
+            case 1:
+                return RaceClass.Ranger;
+            case 2:
+                return RaceClass.Sorcerer;
+            case 3:
+                return RaceClass.Paladin;
+            case 4:
+                return RaceClass.Rouge;
+            default:
+                return RaceClass.Barbarian;
+        }
+    }
+
     public List<GameObject> GetRacePrefabList()
     {
         return racePrefabs;
