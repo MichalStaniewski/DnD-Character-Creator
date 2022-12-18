@@ -5,7 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Race", menuName = "Character Race")]
 public class RaceScriptableObject : StatsScriptableObject
 {
+    [SerializeField] private GameObject raceModelPrefab;
     [SerializeField] private List<GameObject> racePrefabs = new List<GameObject>();
+
+    [SerializeField] private int classIndex = 0;
 
     /// <summary>
     /// Index: Barbarian = 0, Ranger = 1, Sorcerer = 2, Paladin = 3, Rouge = 4
@@ -33,6 +36,7 @@ public class RaceScriptableObject : StatsScriptableObject
     [SerializeField] private RaceClass myClass = RaceClass.Barbarian;
     [SerializeField] private Race myRace = Race.Human;
 
+    //NOTE: could consider having an index here for the different classes. 0-4 for each class and store the base prefab then enable the children in the prefab with the index.
     public GameObject RaceClassPrefab(RaceClass _raceClass)
     {
         switch (_raceClass)
