@@ -12,6 +12,10 @@ public class CharacterMain : MonoBehaviour
 
     private Dictionary<string, RaceScriptableObject> raceDict = new Dictionary<string, RaceScriptableObject>();
 
+    [SerializeField] private List<GameObject> racePrefabs = new List<GameObject>();
+
+    private GameObject currentRacePrefab;
+
     [SerializeField] private int classIndex = 0;    
     [SerializeField] private int raceIndex = 0;
 
@@ -41,22 +45,42 @@ public class CharacterMain : MonoBehaviour
         }
         else
         {
-            maxClassIndex = availableClasses.Count - 1;
             maxRaceIndex = availableRaces.Count - 1;
+            maxClassIndex = availableClasses.Count - 1;
 
-            currentClass = availableClasses[0];
             currentRace = availableRaces[0];
+            currentClass = availableClasses[0];
         }
+
+        var _classPrefab = currentRace.RaceClassPrefab(RaceScriptableObject.RaceClass.Barbarian);
+
+        currentRacePrefab = Instantiate(_classPrefab, transform);
     }
 
     private void UpdateRace()
     {
         currentRace = availableRaces[raceIndex];
+
+        Destroy(currentRacePrefab);
+
+        var _classPrefab = currentRace.RaceClassPrefab(currentRace.GetRaceFromIndex(classIndex));
+
+        currentRacePrefab = Instantiate(_classPrefab, transform);
+
+        /*currentRacePrefab.SetActive(false);
+        currentRacePrefab = racePrefabs[raceIndex];
+        currentRacePrefab.SetActive(true);*/
     }
 
     private void UpdateClass()
     {
         currentClass = availableClasses[classIndex];
+
+        Destroy(currentRacePrefab);
+
+        var _classPrefab = currentRace.RaceClassPrefab(currentRace.GetRaceFromIndex(classIndex));
+
+        currentRacePrefab = Instantiate(_classPrefab, transform);
     }
 
     public void ChangeClassIndex(int _val)

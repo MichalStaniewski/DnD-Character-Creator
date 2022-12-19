@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 495dd828e935c7943819ab52ee92002c, type: 3}
-  m_Name: Human
+  m_Name: Ork
   m_EditorClassIdentifier: 
-  thisName: Human
+  thisName: Ork
   strength: 0
   movement: 0
   charm: 0
@@ -20,11 +20,11 @@ MonoBehaviour:
   mystic: 0
   raceModelPrefab: {fileID: 0}
   racePrefabs:
-  - {fileID: 264559709268197635, guid: b088375802353624ba3656d2d7a73eb7, type: 3}
-  - {fileID: 4460198387390918472, guid: 204c52d6f0814544388fd8ee4acb61a8, type: 3}
-  - {fileID: 1440764986368992159, guid: 85c2d0296fed4ab44ae62dc7abd57b2e, type: 3}
-  - {fileID: 1199947072366297476, guid: 70814e17a6a580d4e9b2ac244533386d, type: 3}
-  - {fileID: 116014260838847845, guid: beb7dafcd9194df4e871c08a95a889a2, type: 3}
+  - {fileID: 3342597321084784591, guid: 549e2b19c38543a4a80de26c59733356, type: 3}
+  - {fileID: 8849385356875299675, guid: e291f5dcfa649c34188b848bef4a7ae7, type: 3}
+  - {fileID: 2364077291044579186, guid: b7741075e80d465449c4a60abcaf1f0a, type: 3}
+  - {fileID: 2789633230754928415, guid: 8490758be7197e44dac8dfcd7a45df20, type: 3}
+  - {fileID: 4248580103218320658, guid: bdfa6a329504e664e9c8e5787e845e6b, type: 3}
   classIndex: 0
   myClass: 0
-  myRace: 0
+  myRace: 2
