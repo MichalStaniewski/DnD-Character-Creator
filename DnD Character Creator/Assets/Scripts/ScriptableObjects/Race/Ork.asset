@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Ork
   m_EditorClassIdentifier: 
   thisName: Ork
-  strength: 0
+  strength: 3
   movement: 0
-  charm: 0
-  intelligence: 0
+  charm: -1
+  intelligence: -2
   mystic: 0
   raceModelPrefab: {fileID: 0}
   racePrefabs:

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Elf
   m_EditorClassIdentifier: 
   thisName: Elf
-  strength: 0
-  movement: 0
-  charm: 0
+  strength: -2
+  movement: 2
+  charm: -1
   intelligence: 0
-  mystic: 0
+  mystic: 1
   raceModelPrefab: {fileID: 0}
   racePrefabs:
   - {fileID: 2692136310565716693, guid: da76fc6d3a1006b42ad460a92ea086df, type: 3}

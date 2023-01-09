@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sorcerer
   m_EditorClassIdentifier: 
   thisName: Sorcerer
-  strength: 0
-  movement: 0
-  charm: 0
-  intelligence: 0
-  mystic: 0
+  strength: -2
+  movement: -1
+  charm: -1
+  intelligence: 2
+  mystic: 2

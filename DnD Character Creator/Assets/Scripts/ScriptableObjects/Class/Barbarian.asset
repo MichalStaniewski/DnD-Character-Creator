@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Barbarian
   m_EditorClassIdentifier: 
   thisName: Barbarian
-  strength: 0
+  strength: 3
   movement: 0
-  charm: 0
-  intelligence: 0
-  mystic: 0
+  charm: -1
+  intelligence: -1
+  mystic: -1

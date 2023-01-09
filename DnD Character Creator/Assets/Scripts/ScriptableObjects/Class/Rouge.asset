@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Rouge
   m_EditorClassIdentifier: 
   thisName: Rouge
-  strength: 0
-  movement: 0
-  charm: 0
+  strength: -3
+  movement: 3
+  charm: 1
   intelligence: 0
-  mystic: 0
+  mystic: -1

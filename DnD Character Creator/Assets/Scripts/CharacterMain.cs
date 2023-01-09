@@ -25,6 +25,8 @@ public class CharacterMain : MonoBehaviour
     [SerializeField] private ClassScriptableObject currentClass;
     [SerializeField] private RaceScriptableObject currentRace;
 
+    [SerializeField] private AttributeUiSetup attributeUi;
+
 
     private void Awake()
     {
@@ -67,6 +69,8 @@ public class CharacterMain : MonoBehaviour
 
         currentRacePrefab = Instantiate(_classPrefab, transform);
 
+        attributeUi.UpdateAttributeValues();
+
         /*currentRacePrefab.SetActive(false);
         currentRacePrefab = racePrefabs[raceIndex];
         currentRacePrefab.SetActive(true);*/
@@ -81,6 +85,12 @@ public class CharacterMain : MonoBehaviour
         var _classPrefab = currentRace.RaceClassPrefab(currentRace.GetRaceFromIndex(classIndex));
 
         currentRacePrefab = Instantiate(_classPrefab, transform);
+
+        attributeUi.UpdateAttributeValues();
+    }
+
+    private void UpdateUI()
+    {
     }
 
     public void ChangeClassIndex(int _val)
@@ -115,13 +125,14 @@ public class CharacterMain : MonoBehaviour
 
         UpdateRace();
     }
-    public string GetRaceName()
+
+    public RaceScriptableObject GetRace()
     {
-        return currentRace.GetName();
+        return currentRace;
     }
 
-    public string GetClassName()
+    public ClassScriptableObject GetClass()
     {
-        return currentClass.GetName();
+        return currentClass;
     }
 }

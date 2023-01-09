@@ -25,10 +25,12 @@ public class UiControl : MonoBehaviour
 
     private void Start()
     {
+        CharacterChangeEventSystem.instance.onChangeCharacterRace += RaceSelectionButton;
+
         SetButtonsAndPanels(true);
 
-        raceNameText.text = characterMain.GetRaceName();
-        classNameText.text = characterMain.GetClassName();
+        raceNameText.text = characterMain.GetRace().GetName();
+        classNameText.text = characterMain.GetClass().GetName();
     }
 
     public void RacePanelButton()
@@ -53,16 +55,13 @@ public class UiControl : MonoBehaviour
     public void RaceSelectionButton(int _val)
     {
         characterMain.ChangeRaceIndex(_val);
-        raceNameText.text = characterMain.GetRaceName();
+        raceNameText.text = characterMain.GetRace().GetName();
     }
 
     public void ClassSelectionButton(int _val)
     {
         characterMain.ChangeClassIndex(_val);
-        classNameText.text = characterMain.GetClassName();
+        classNameText.text = characterMain.GetClass().GetName();
     }
-    #endregion
-
-    #region LeftPanel
     #endregion
 }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ranger
   m_EditorClassIdentifier: 
   thisName: Ranger
-  strength: 0
-  movement: 0
+  strength: -2
+  movement: 2
   charm: 0
-  intelligence: 0
+  intelligence: 1
   mystic: 0
