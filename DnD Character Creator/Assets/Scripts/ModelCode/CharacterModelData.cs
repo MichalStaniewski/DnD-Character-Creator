@@ -22,14 +22,9 @@ namespace Models
         private static CharacterModelData modelData;
         public static CharacterModelData ModelData
         {
-            get 
+            get
             {
-                if (modelData != null)
-                {
-                    Debug.LogWarning("Singleton instance already exists!");
-                }
-
-                return modelData; 
+                return modelData;
             }
         }
 
@@ -40,8 +35,22 @@ namespace Models
 
         private void Start()
         {
-            maxClassIndex = availableClasses.Count;
-            maxRaceIndex = availableRaces.Count;
+            maxClassIndex = availableClasses.Count - 1;
+            maxRaceIndex = availableRaces.Count - 1;
+
+            if (availableClasses.Count == 0 || availableRaces.Count == 0)
+            {
+                Debug.LogError("AvailableClasses or Available Races have not been populated!");
+                return;
+            }
+            else
+            {
+                maxRaceIndex = availableRaces.Count - 1;
+                maxClassIndex = availableClasses.Count - 1;
+
+                currentRace = availableRaces[0];
+                currentClass = availableClasses[0];
+            }
         }
 
         public void SetRaceIndex(int _val)

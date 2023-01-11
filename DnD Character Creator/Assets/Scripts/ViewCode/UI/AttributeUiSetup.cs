@@ -1,70 +1,81 @@
+using Models;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class AttributeUiSetup : MonoBehaviour
+namespace View
 {
-    [Header("References")]
-    [SerializeField] private CharacterVisulas characterRef;
-
-    [Header("Attribute Values")]
-    [SerializeField] private TextMeshProUGUI strengthText;
-    [SerializeField] private TextMeshProUGUI movementText;
-    [SerializeField] private TextMeshProUGUI charmText;
-    [SerializeField] private TextMeshProUGUI intelligenceText;
-    [SerializeField] private TextMeshProUGUI mysticText;
-
-    [Header("Values")] 
-    private int strengthValue;
-    private int movementValue;
-    private int charmValue;
-    private int intelligenceValue;
-    private int mysticValue;
-
-    private void Start()
+    public class AttributeUiSetup : MonoBehaviour
     {
-        UpdateAttributeValues();
-    }
+        [Header("References")]
+        [SerializeField] private CharacterVisuals characterRef;
 
-    public void UpdateAttributeValues()
-    {
-        ResetAttributes();
+        [Header("Attribute Values")]
+        [SerializeField] private TextMeshProUGUI strengthText;
+        [SerializeField] private TextMeshProUGUI movementText;
+        [SerializeField] private TextMeshProUGUI charmText;
+        [SerializeField] private TextMeshProUGUI intelligenceText;
+        [SerializeField] private TextMeshProUGUI mysticText;
 
-        #region RaceAttributes
-        strengthValue += characterRef.GetRace().GetStrength();
-        movementValue += characterRef.GetRace().GetMovement();
-        charmValue += characterRef.GetRace().GetCharm();
-        intelligenceValue += characterRef.GetRace().GetIntelligence();
-        mysticValue += characterRef.GetRace().GetMystic();
-        #endregion
+        [Header("Values")]
+        private int strengthValue;
+        private int movementValue;
+        private int charmValue;
+        private int intelligenceValue;
+        private int mysticValue;
 
-        #region ClassAttributes
-        strengthValue += characterRef.GetClass().GetStrength();
-        movementValue += characterRef.GetClass().GetMovement();
-        charmValue += characterRef.GetClass().GetCharm();
-        intelligenceValue += characterRef.GetClass().GetIntelligence();
-        mysticValue += characterRef.GetClass().GetMystic();
-        #endregion
+        private void Start()
+        {
+            UpdateAttributeValues(0);
 
-        UpdateUI();
-    }
+            CharacterChangeEventSystem.instance.onRaceChange += UpdateAttributeValues;
+            CharacterChangeEventSystem.instance.onClassChange += UpdateAttributeValues;
+        }
 
-    private void UpdateUI()
-    {
-        strengthText.text = strengthValue.ToString();
-        movementText.text = movementValue.ToString();
-        charmText.text = charmValue.ToString();
-        intelligenceText.text = intelligenceValue.ToString();
-        mysticText.text = mysticValue.ToString();
-    }
+        public void UpdateAttributeValues(int _val)
+        {
+            ResetAttributes();
 
-    private void ResetAttributes()
-    {
-        strengthValue = 10;
-        movementValue = 10;
-        charmValue = 10;
-        intelligenceValue = 10;
-        mysticValue = 10;
+            #region RaceAttributes        
+            RaceScriptableObject _raceRef = CharacterModelData.ModelData.GetCurrentRace();
+
+            strengthValue += _raceRef.GetStrength();
+            movementValue += _raceRef.GetMovement();
+            charmValue += _raceRef.GetCharm();
+            intelligenceValue += _raceRef.GetIntelligence();
+            mysticValue += _raceRef.GetMystic();
+            #endregion
+
+            #region ClassAttributes
+            ClassScriptableObject _classRef = CharacterModelData.ModelData.GetCurrentClass();
+
+            strengthValue += _classRef.GetStrength();
+            movementValue += _classRef.GetMovement();
+            charmValue += _classRef.GetCharm();
+            intelligenceValue += _classRef.GetIntelligence();
+            mysticValue += _classRef.GetMystic();
+            #endregion
+
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            strengthText.text = strengthValue.ToString();
+            movementText.text = movementValue.ToString();
+            charmText.text = charmValue.ToString();
+            intelligenceText.text = intelligenceValue.ToString();
+            mysticText.text = mysticValue.ToString();
+        }
+
+        private void ResetAttributes()
+        {
+            strengthValue = 10;
+            movementValue = 10;
+            charmValue = 10;
+            intelligenceValue = 10;
+            mysticValue = 10;
+        }
     }
 }

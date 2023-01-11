@@ -7,7 +7,7 @@ namespace Controllers
 {
     public class CharacterController : MonoBehaviour
     {
-        private void Awake()
+        private void Start()
         {
             CharacterChangeEventSystem.instance.onRaceChange += ChangeCharacterRaceIndex;
             CharacterChangeEventSystem.instance.onClassChange += ChangeCharacterClassIndex;

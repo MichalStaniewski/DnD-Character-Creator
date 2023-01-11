@@ -385,6 +385,8 @@ GameObject:
   m_Component:
   - component: {fileID: 84495608}
   - component: {fileID: 84495609}
+  - component: {fileID: 84495610}
+  - component: {fileID: 84495611}
   m_Layer: 0
   m_Name: CharacterMain
   m_TagString: Untagged
@@ -419,6 +421,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e654acbc84e10a14f8114d7c8b17cb8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  classIndex: 0
+  raceIndex: 0
+--- !u!114 &84495610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84495607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40db1625e7b7d0942982f7d6e6a7e229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &84495611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84495607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa910ba6d2b06e4699672b832b07818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   availableClasses:
   - {fileID: 11400000, guid: 1584a789cb850c84b812d4c422ff5868, type: 2}
   - {fileID: 11400000, guid: 7dc3acbb75135664dbeda5431e96ba51, type: 2}
@@ -430,14 +458,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60bddf633e233cd4fa5989e17174f005, type: 2}
   - {fileID: 11400000, guid: a6e0bb583f5911247bda98d23e6c369b, type: 2}
   - {fileID: 11400000, guid: 074862dff6f7eba4995002ba2deaefb0, type: 2}
-  racePrefabs: []
   classIndex: 0
   raceIndex: 0
   maxClassIndex: 0
   maxRaceIndex: 0
   currentClass: {fileID: 0}
   currentRace: {fileID: 0}
-  attributeUi: {fileID: 115050719}
 --- !u!1 &115050717
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536d833a3fc58be43b6181ca93e863f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterMain: {fileID: 84495609}
   racePanel: {fileID: 1449585552}
   classPanel: {fileID: 1759331708}
   raceButton: {fileID: 602157108}
@@ -3260,7 +3285,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2123652827}
         m_TargetAssemblyTypeName: CharacterChangeEventSystem, Assembly-CSharp
-        m_MethodName: OnChangeCharacter
+        m_MethodName: OnRaceChange
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4607,7 +4632,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2123652827}
         m_TargetAssemblyTypeName: CharacterChangeEventSystem, Assembly-CSharp
-        m_MethodName: OnChangeCharacter
+        m_MethodName: OnRaceChange
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6304,9 +6329,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 162069342}
-        m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
-        m_MethodName: ClassSelectionButton
+      - m_Target: {fileID: 2123652827}
+        m_TargetAssemblyTypeName: CharacterChangeEventSystem, Assembly-CSharp
+        m_MethodName: OnClassChange
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7639,8 +7664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5cf4daae578af4f97ed8c5dd5a2d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raceIndex: 0
-  classIndex: 0
 --- !u!4 &2123652828
 Transform:
   m_ObjectHideFlags: 0
@@ -7740,9 +7763,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 162069342}
-        m_TargetAssemblyTypeName: UiControl, Assembly-CSharp
-        m_MethodName: ClassSelectionButton
+      - m_Target: {fileID: 2123652827}
+        m_TargetAssemblyTypeName: CharacterChangeEventSystem, Assembly-CSharp
+        m_MethodName: OnClassChange
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

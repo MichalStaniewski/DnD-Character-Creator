@@ -3,137 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterVisulas : MonoBehaviour
+namespace View
 {
-    [SerializeField] private List<ClassScriptableObject> availableClasses = new List<ClassScriptableObject>();
-
-    private Dictionary<string, ClassScriptableObject> classDict = new Dictionary<string, ClassScriptableObject>();
-
-    [SerializeField] private List<RaceScriptableObject> availableRaces = new List<RaceScriptableObject>();
-
-    private Dictionary<string, RaceScriptableObject> raceDict = new Dictionary<string, RaceScriptableObject>();
-
-    [SerializeField] private List<GameObject> racePrefabs = new List<GameObject>();
-
-    private GameObject currentRacePrefab;
-
-    [SerializeField] private int classIndex = 0;    
-    [SerializeField] private int raceIndex = 0;
-
-    [SerializeField] private int maxClassIndex = 0; 
-    [SerializeField] private int maxRaceIndex = 0;
-
-    [SerializeField] private ClassScriptableObject currentClass;
-    [SerializeField] private RaceScriptableObject currentRace;
-
-    [SerializeField] private AttributeUiSetup attributeUi;
-
-
-    private void Awake()
+    public class CharacterVisuals : MonoBehaviour
     {
-        foreach (ClassScriptableObject _class in availableClasses)
+        private GameObject currentRacePrefab;
+
+        private void Awake()
         {
-            classDict.Add(_class.GetName(), _class);
+            SetCharacterVisuals(0);
         }
 
-        foreach (RaceScriptableObject _race in availableRaces)
+        private void Start()
         {
-            raceDict.Add(_race.GetName(), _race);
+            CharacterChangeEventSystem.instance.onRaceChange += SetCharacterVisuals;
+            CharacterChangeEventSystem.instance.onClassChange += SetCharacterVisuals;
         }
 
-        if (availableClasses.Count == 0 || availableRaces.Count == 0)
+        public void SetCharacterVisuals(int _val)
         {
-            Debug.LogError("AvailableClasses or Available Races have not been populated!");
-            return;
+            if (currentRacePrefab != null)
+            {
+                Destroy(currentRacePrefab);
+            }
+
+            var _modelData = CharacterModelData.ModelData;
+
+            int _raceIndex = _modelData.GetRaceIndex();
+            int _classIndex = _modelData.GetClassIndex();
+
+            var _classPrefab = _modelData.GetAvailableRaceList()[_raceIndex].GetRacePrefabList()[_classIndex];
+
+            currentRacePrefab = Instantiate(_classPrefab, transform);
         }
-        else
-        {
-            maxRaceIndex = availableRaces.Count - 1;
-            maxClassIndex = availableClasses.Count - 1;
-
-            currentRace = availableRaces[0];
-            currentClass = availableClasses[0];
-        }
-
-        var _classPrefab = currentRace.RaceClassPrefab(RaceScriptableObject.RaceClass.Barbarian);
-
-        currentRacePrefab = Instantiate(_classPrefab, transform);
-    }
-
-    private void UpdateRace()
-    {
-        currentRace = availableRaces[raceIndex];
-
-        Destroy(currentRacePrefab);
-
-        var _classPrefab = currentRace.RaceClassPrefab(currentRace.GetRaceFromIndex(classIndex));
-
-        currentRacePrefab = Instantiate(_classPrefab, transform);
-
-        attributeUi.UpdateAttributeValues();
-
-        /*currentRacePrefab.SetActive(false);
-        currentRacePrefab = racePrefabs[raceIndex];
-        currentRacePrefab.SetActive(true);*/
-    }
-
-    private void UpdateClass()
-    {
-        currentClass = availableClasses[classIndex];
-
-        Destroy(currentRacePrefab);
-
-        var _classPrefab = currentRace.RaceClassPrefab(currentRace.GetRaceFromIndex(classIndex));
-
-        currentRacePrefab = Instantiate(_classPrefab, transform);
-
-        attributeUi.UpdateAttributeValues();
-    }
-
-    private void UpdateUI()
-    {
-    }
-
-    public void ChangeClassIndex(int _val)
-    {
-        classIndex += _val;
-
-        if (classIndex > maxClassIndex)
-        {
-            classIndex = 0;
-        }
-
-        if (classIndex < 0)
-        {
-            classIndex = maxClassIndex;
-        }
-        UpdateClass();
-    }
-    
-    public void ChangeRaceIndex(int _val)
-    {
-        raceIndex += _val;
-
-        if (raceIndex > maxRaceIndex)
-        {
-            raceIndex = 0;
-        }
-
-        if (raceIndex < 0)
-        {
-            raceIndex = maxRaceIndex;
-        }
-
-        UpdateRace();
-    }
-
-    public RaceScriptableObject GetRace()
-    {
-        return currentRace;
-    }
-
-    public ClassScriptableObject GetClass()
-    {
-        return currentClass;
     }
 }

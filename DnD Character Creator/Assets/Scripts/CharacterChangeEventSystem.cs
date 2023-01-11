@@ -12,9 +12,7 @@ public class CharacterChangeEventSystem : MonoBehaviour
         instance = this;
     }
 
-    public Action<int> onRaceChange;
-    public Action<int> onClassChange;
-
+    public event Action<int> onRaceChange;
     public void OnRaceChange(int _val)
     {
         if (onRaceChange != null)
@@ -22,7 +20,9 @@ public class CharacterChangeEventSystem : MonoBehaviour
             onRaceChange(_val);
         }
     }
-    
+
+
+    public event Action<int> onClassChange;
     public void OnClassChange(int _val)
     {
         if (onClassChange != null)
