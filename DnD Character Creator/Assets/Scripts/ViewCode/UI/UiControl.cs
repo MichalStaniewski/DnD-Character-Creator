@@ -7,7 +7,7 @@ using TMPro;
 public class UiControl : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private CharacterMain characterMain;
+    [SerializeField] private CharacterVisulas characterMain;
 
     #region RightPanel
     [Header("RightPanel")]
@@ -25,7 +25,7 @@ public class UiControl : MonoBehaviour
 
     private void Start()
     {
-        CharacterChangeEventSystem.instance.onChangeCharacterRace += RaceSelectionButton;
+        //CharacterChangeEventSystem.instance.onChangeCharacterRace += RaceSelectionButton;
 
         SetButtonsAndPanels(true);
 

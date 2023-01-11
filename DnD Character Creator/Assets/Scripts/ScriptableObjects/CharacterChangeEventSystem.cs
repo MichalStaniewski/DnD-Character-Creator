@@ -12,37 +12,22 @@ public class CharacterChangeEventSystem : MonoBehaviour
         instance = this;
     }
 
-    public event Action<int> onChangeCharacterRace;
-    public event Action<int> onChangeCharacterClass;
+    public Action<int> onRaceChange;
+    public Action<int> onClassChange;
 
-    private Func<int> onRequestClassIndex;
-    private Func<int> onRequestRaceIndex;
-
-    public void OnChangeCharacter(int _index)
+    public void OnRaceChange(int _val)
     {
-        if (onChangeCharacterRace != null)
+        if (onRaceChange != null)
         {
-            onChangeCharacterRace(_index);
+            onRaceChange(_val);
         }
     }
-
-    public int OnRequestClassIndex()
+    
+    public void OnClassChange(int _val)
     {
-        if (onRequestClassIndex != null)
+        if (onClassChange != null)
         {
-            return onRequestClassIndex();
+            onClassChange(_val);
         }
-
-        return -1;
-    }
-
-    public int OnRequestRaceIndex()
-    {
-        if (onRequestRaceIndex != null)
-        {
-            return onRequestRaceIndex();
-        }
-
-        return -1;
     }
 }

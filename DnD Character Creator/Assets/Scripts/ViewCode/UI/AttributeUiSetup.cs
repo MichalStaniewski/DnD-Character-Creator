@@ -6,7 +6,7 @@ using TMPro;
 public class AttributeUiSetup : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private CharacterMain characterRef;
+    [SerializeField] private CharacterVisulas characterRef;
 
     [Header("Attribute Values")]
     [SerializeField] private TextMeshProUGUI strengthText;

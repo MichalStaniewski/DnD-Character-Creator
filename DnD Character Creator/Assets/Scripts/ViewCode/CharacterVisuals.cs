@@ -1,8 +1,9 @@
+using Models;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMain : MonoBehaviour
+public class CharacterVisulas : MonoBehaviour
 {
     [SerializeField] private List<ClassScriptableObject> availableClasses = new List<ClassScriptableObject>();
 
