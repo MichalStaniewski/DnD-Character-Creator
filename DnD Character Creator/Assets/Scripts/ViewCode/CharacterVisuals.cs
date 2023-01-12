@@ -9,19 +9,18 @@ namespace View
     {
         private GameObject currentRacePrefab;
 
-        private void Awake()
-        {
-            SetCharacterVisuals(0);
-        }
-
         private void Start()
         {
+            SetCharacterVisuals(0);
+
             CharacterChangeEventSystem.instance.onRaceChange += SetCharacterVisuals;
             CharacterChangeEventSystem.instance.onClassChange += SetCharacterVisuals;
         }
 
         public void SetCharacterVisuals(int _val)
         {
+            Debug.Log("Race Index: " + CharacterModelData.ModelData.GetRaceIndex());
+
             if (currentRacePrefab != null)
             {
                 Destroy(currentRacePrefab);
