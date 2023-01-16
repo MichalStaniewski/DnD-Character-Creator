@@ -3281,9 +3281,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123652827}
-        m_TargetAssemblyTypeName: CharacterChangeEventSystem, Assembly-CSharp
-        m_MethodName: OnRaceChange
+      - m_Target: {fileID: 84495610}
+        m_TargetAssemblyTypeName: Controllers.CharacterController, Assembly-CSharp
+        m_MethodName: ChangeCharacterRaceIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4628,9 +4628,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123652827}
-        m_TargetAssemblyTypeName: CharacterChangeEventSystem, Assembly-CSharp
-        m_MethodName: OnRaceChange
+      - m_Target: {fileID: 84495610}
+        m_TargetAssemblyTypeName: Controllers.CharacterController, Assembly-CSharp
+        m_MethodName: ChangeCharacterRaceIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6327,9 +6327,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123652827}
-        m_TargetAssemblyTypeName: CharacterChangeEventSystem, Assembly-CSharp
-        m_MethodName: OnClassChange
+      - m_Target: {fileID: 84495610}
+        m_TargetAssemblyTypeName: Controllers.CharacterController, Assembly-CSharp
+        m_MethodName: ChangeCharacterClassIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7761,9 +7761,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123652827}
-        m_TargetAssemblyTypeName: CharacterChangeEventSystem, Assembly-CSharp
-        m_MethodName: OnClassChange
+      - m_Target: {fileID: 84495610}
+        m_TargetAssemblyTypeName: Controllers.CharacterController, Assembly-CSharp
+        m_MethodName: ChangeCharacterClassIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

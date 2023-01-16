@@ -19,8 +19,6 @@ namespace View
 
         public void SetCharacterVisuals(int _val)
         {
-            Debug.Log("Race Index: " + CharacterModelData.ModelData.GetRaceIndex());
-
             if (currentRacePrefab != null)
             {
                 Destroy(currentRacePrefab);

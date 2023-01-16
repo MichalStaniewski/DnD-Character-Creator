@@ -9,18 +9,22 @@ namespace Controllers
     {
         private void Start()
         {
-            CharacterChangeEventSystem.instance.onRaceChange += ChangeCharacterRaceIndex;
-            CharacterChangeEventSystem.instance.onClassChange += ChangeCharacterClassIndex;
+            //CharacterChangeEventSystem.instance.onRaceChange += ChangeCharacterRaceIndex;
+            //CharacterChangeEventSystem.instance.onClassChange += ChangeCharacterClassIndex;
         }
 
-        public void ChangeCharacterRaceIndex(int _val)
+        public void ChangeCharacterRaceIndex(int _changeRaceIndex)
         {
-            CharacterModelData.ModelData.SetRaceIndex(_val);
+            CharacterModelData.ModelData.SetRaceIndex(_changeRaceIndex);
+            
+            CharacterChangeEventSystem.instance.OnRaceChange(_changeRaceIndex);
         }
         
-        public void ChangeCharacterClassIndex(int _val)
+        public void ChangeCharacterClassIndex(int _changeClassIndex)
         {
-            CharacterModelData.ModelData.SetClassIndex(_val);
+            CharacterModelData.ModelData.SetClassIndex(_changeClassIndex);
+
+            CharacterChangeEventSystem.instance.OnClassChange(_changeClassIndex);
         }
     }
 }
