@@ -21,9 +21,8 @@ namespace View
         [SerializeField] private TextMeshProUGUI raceNameText;
         [SerializeField] private TextMeshProUGUI classNameText;
 
-
         private void Start()
-        {
+        {            
             CharacterChangeEventSystem.instance.onRaceChange += UpdateNameText;
             CharacterChangeEventSystem.instance.onClassChange += UpdateNameText;
 
