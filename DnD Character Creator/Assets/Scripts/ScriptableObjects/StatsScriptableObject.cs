@@ -12,13 +12,19 @@ public class StatsScriptableObject : ScriptableObject
     [SerializeField] private int intelligence = 0;
     [SerializeField] private int mystic = 0;
 
-    //[SerializeField] private GameObject classPrefab;
+    [SerializeField] private List<AbilityBase> abilities = new List<AbilityBase>();
 
     #region Public Getters
-    /*public GameObject GetPrefab()
+
+    public void AddAbility(AbilityBase _newAbility)
     {
-        return classPrefab;
-    }*/
+        abilities.Add(_newAbility);
+    }
+
+    public List<AbilityBase> GetAbilities()
+    {
+        return abilities;    
+    }
 
     public string GetName()
     {

@@ -2,15 +2,20 @@ using Models;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using View;
 
 namespace Controllers
 {
     public class CharacterController : MonoBehaviour
     {
+        [SerializeField] private UiControl uiNameControl;
+
         private void Start()
         {
-            //CharacterChangeEventSystem.instance.onRaceChange += ChangeCharacterRaceIndex;
-            //CharacterChangeEventSystem.instance.onClassChange += ChangeCharacterClassIndex;
+            CharacterModelData.ModelData.SetRaceIndex(0);
+            CharacterModelData.ModelData.SetClassIndex(0);
+
+            uiNameControl.UpdateNameText(0);
         }
 
         public void ChangeCharacterRaceIndex(int _changeRaceIndex)
