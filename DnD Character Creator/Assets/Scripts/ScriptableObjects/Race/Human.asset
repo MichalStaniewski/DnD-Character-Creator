@@ -18,13 +18,12 @@ MonoBehaviour:
   charm: 0
   intelligence: 0
   mystic: 0
-  raceModelPrefab: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: 13695881fd44f0542bfe48a3f72aca9a, type: 2}
   racePrefabs:
   - {fileID: 264559709268197635, guid: b088375802353624ba3656d2d7a73eb7, type: 3}
   - {fileID: 4460198387390918472, guid: 204c52d6f0814544388fd8ee4acb61a8, type: 3}
   - {fileID: 1440764986368992159, guid: 85c2d0296fed4ab44ae62dc7abd57b2e, type: 3}
   - {fileID: 1199947072366297476, guid: 70814e17a6a580d4e9b2ac244533386d, type: 3}
   - {fileID: 116014260838847845, guid: beb7dafcd9194df4e871c08a95a889a2, type: 3}
-  classIndex: 0
   myClass: 0
-  myRace: 0

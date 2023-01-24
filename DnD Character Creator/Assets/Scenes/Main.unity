@@ -434,6 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiNameControl: {fileID: 1331746066}
+  abilityUiSetup: {fileID: 772868904}
 --- !u!114 &84495611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +458,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60bddf633e233cd4fa5989e17174f005, type: 2}
   - {fileID: 11400000, guid: a6e0bb583f5911247bda98d23e6c369b, type: 2}
   - {fileID: 11400000, guid: 074862dff6f7eba4995002ba2deaefb0, type: 2}
+  currentAbilities: []
   classIndex: 0
   raceIndex: 0
   maxClassIndex: 0
@@ -558,8 +560,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 9.999847}
-  m_SizeDelta: {x: 300, y: 0}
+  m_AnchoredPosition: {x: 25.000061, y: 9.999847}
+  m_SizeDelta: {x: 250.00012, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125933127
 MonoBehaviour:
@@ -1512,8 +1514,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 150, y: 0}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &274264062
 MonoBehaviour:
@@ -2505,6 +2507,7 @@ GameObject:
   - component: {fileID: 552914168}
   - component: {fileID: 552914170}
   - component: {fileID: 552914169}
+  - component: {fileID: 552914171}
   m_Layer: 5
   m_Name: Ability 3
   m_TagString: Untagged
@@ -2587,7 +2590,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2630,6 +2633,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552914167}
   m_CullTransparentMesh: 1
+--- !u!114 &552914171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552914167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47f3c26dbd71b3498e611a2a4aa3cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: {fileID: 552914169}
+  abilityIcon: {fileID: 2018703136}
 --- !u!1 &558083646
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,6 +4061,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772868903}
+  - component: {fileID: 772868904}
   m_Layer: 5
   m_Name: AbilitiesSection
   m_TagString: Untagged
@@ -4073,6 +4091,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &772868904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772868902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9824de4e6a68f4aba518ecdcee9071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities:
+  - {fileID: 1843188384}
+  - {fileID: 1518301107}
+  - {fileID: 552914171}
 --- !u!1001 &842947182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6109,6 +6143,7 @@ GameObject:
   - component: {fileID: 1518301104}
   - component: {fileID: 1518301106}
   - component: {fileID: 1518301105}
+  - component: {fileID: 1518301107}
   m_Layer: 5
   m_Name: Ability 2
   m_TagString: Untagged
@@ -6191,7 +6226,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6234,6 +6269,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518301103}
   m_CullTransparentMesh: 1
+--- !u!114 &1518301107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518301103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47f3c26dbd71b3498e611a2a4aa3cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: {fileID: 1518301105}
+  abilityIcon: {fileID: 274264062}
 --- !u!1 &1562946140
 GameObject:
   m_ObjectHideFlags: 0
@@ -6345,8 +6394,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 150, y: 0}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1588354856
 MonoBehaviour:
@@ -6950,6 +6999,7 @@ GameObject:
   - component: {fileID: 1843188381}
   - component: {fileID: 1843188383}
   - component: {fileID: 1843188382}
+  - component: {fileID: 1843188384}
   m_Layer: 5
   m_Name: Ability 1
   m_TagString: Untagged
@@ -7032,7 +7082,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7075,6 +7125,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843188380}
   m_CullTransparentMesh: 1
+--- !u!114 &1843188384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843188380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47f3c26dbd71b3498e611a2a4aa3cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityName: {fileID: 1843188382}
+  abilityIcon: {fileID: 1588354856}
 --- !u!1 &1876591687
 GameObject:
   m_ObjectHideFlags: 0
@@ -7637,8 +7701,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 150, y: 0}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2018703136
 MonoBehaviour:

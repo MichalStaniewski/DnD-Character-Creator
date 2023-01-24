@@ -15,6 +15,6 @@ MonoBehaviour:
   abilityName: Rallying Cry
   cooldownTime: 0
   activeTime: 0
-  abilityIcon: {fileID: 21300000, guid: 5834c9fbe449d4346b017dcbb7954c94, type: 3}
+  abilityIcon: {fileID: 21300000, guid: 48aab667bb174e94b94edcd6a1e41c96, type: 3}
   desciption: The character shouts with all their might increasing the players damage
     and decreasing the enemies damage in a circle around them.

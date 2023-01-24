@@ -10,6 +10,8 @@ namespace Models
 
         [SerializeField] private List<RaceScriptableObject> availableRaces = new List<RaceScriptableObject>();
 
+        [SerializeField] private List<AbilityBase> currentAbilities = new List<AbilityBase>();
+
         [SerializeField] private int classIndex = 0;
         [SerializeField] private int raceIndex = 0;
 
@@ -85,6 +87,21 @@ namespace Models
             }
 
             currentClass = availableClasses[classIndex];
+        }
+
+        public void SetAbilities()
+        {
+            currentAbilities.Clear();
+
+            currentAbilities.Add(currentRace.GetAbilities()[0]);
+                        
+            currentAbilities.Add(currentClass.GetAbilities()[0]);
+            currentAbilities.Add(currentClass.GetAbilities()[1]);            
+        }
+
+        public List<AbilityBase> GetCurrentAbilities()
+        {
+            return currentAbilities;
         }
 
         public List<RaceScriptableObject> GetAvailableRaceList()

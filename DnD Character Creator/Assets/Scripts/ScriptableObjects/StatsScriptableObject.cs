@@ -23,7 +23,7 @@ public class StatsScriptableObject : ScriptableObject
 
     public List<AbilityBase> GetAbilities()
     {
-        return abilities;    
+        return abilities;
     }
 
     public string GetName()

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c452be7df1cd77542b09f563eed89bb3, type: 3}
+  m_Name: Dwarf Ability
+  m_EditorClassIdentifier: 
+  abilityName: Dwarven Grudge
+  cooldownTime: 0
+  activeTime: 0
+  abilityIcon: {fileID: 21300000, guid: b1d0f3bd916dc1946a77ee71952cebbd, type: 3}
+  desciption: Taking damage from enemies fills up a progress bar, when the ability
+    is activated, release the built-up grudge as an explosion of damage around the
+    character. Ability deals more damage depending on the progress bar.

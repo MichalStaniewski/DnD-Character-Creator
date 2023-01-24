@@ -18,3 +18,6 @@ MonoBehaviour:
   charm: 1
   intelligence: 0
   mystic: -1
+  abilities:
+  - {fileID: 11400000, guid: adc9e1d1aebe2fb48acd83d2a110fdc7, type: 2}
+  - {fileID: 11400000, guid: 7f5ed1e47cd0aa440af39c5d8c76fc98, type: 2}
