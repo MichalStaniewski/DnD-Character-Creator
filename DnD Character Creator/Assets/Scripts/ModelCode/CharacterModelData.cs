@@ -31,7 +31,7 @@ namespace Models
         }
 
         private void Awake()
-        {
+        {            
             modelData = this;
         }
 
