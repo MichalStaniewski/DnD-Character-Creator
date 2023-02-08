@@ -21,6 +21,7 @@ public class AbilityUiSetup : MonoBehaviour
         {
             abilities[abilityIndex].SetIcon(_raceAbilities[abilityIndex].abilityIcon);
             abilities[abilityIndex].SetName(_raceAbilities[abilityIndex].abilityName);
+            abilities[abilityIndex].SetDescription(_raceAbilities[abilityIndex].desciption);
         }        
     }
 }

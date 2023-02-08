@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class AbilityUi : MonoBehaviour
 {
-    //[SerializeField] private string abilityName;
     [SerializeField] private TextMeshProUGUI abilityName;
     [SerializeField] private Image abilityIcon;
+    [SerializeField] private UiAbilityDescription myDescription;
 
     public Image GetAbilityIcon()
     {
@@ -17,11 +17,28 @@ public class AbilityUi : MonoBehaviour
 
     public void SetName(string _name)
     {
-        abilityName.text = _name;
+        abilityName.text = _name;        
     }
 
     public void SetIcon(Sprite _sprite)
     {
         abilityIcon.sprite = _sprite;
     }
+
+    public void SetDescription(string _description)
+    {
+        myDescription.SetDescription(_description);
+    }
+
+    public void ActivateDescription()
+    {
+        Vector2 _position = myDescription.gameObject.transform.position;
+        myDescription.Activate(_position);
+    }
+
+    public void DeactivateDescription()
+    {
+        myDescription.Deactivate();
+    }
 }
+
