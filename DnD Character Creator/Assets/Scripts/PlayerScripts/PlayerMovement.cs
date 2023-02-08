@@ -27,8 +27,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        
+    {        
         float _hori = Input.GetAxisRaw("Horizontal");
         float _vert = Input.GetAxisRaw("Vertical");
 

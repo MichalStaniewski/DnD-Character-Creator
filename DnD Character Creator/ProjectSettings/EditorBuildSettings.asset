@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CharacterCreator.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/AdventureDemo.unity
+    guid: 32b490acf86ebb74ca8ce911c4779a5c
+  - enabled: 1
     path: Assets/Scenes/MainOverworld.unity
     guid: d70debc99e991474da2faa48155e7077
   m_configObjects: {}
