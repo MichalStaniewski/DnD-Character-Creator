@@ -12,10 +12,15 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private CharacterController controller;
 
+    [SerializeField] private Transform camTransform;
+
     [Header("Variables")]
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private float groundDrag;
+    
+    private float turnSmoothing = 0.1f;
+    private float turnSmoothVelocity;
 
     private void Awake()
     {
@@ -35,7 +40,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (_direction.magnitude >= 0.1f)
         {
-            controller.Move(_direction * moveSpeed * Time.deltaTime);
+            float _targetAngle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg + camTransform.eulerAngles.y;
+            float _angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetAngle, ref turnSmoothVelocity, turnSmoothing); 
+            transform.rotation = Quaternion.Euler(0f, _angle, 0f);
+
+            Vector3 _moveDir = Quaternion.Euler(0f, _targetAngle, 0f) * Vector3.forward;
+
+            controller.Move(_moveDir.normalized * moveSpeed * Time.deltaTime);
         }
         
         /*

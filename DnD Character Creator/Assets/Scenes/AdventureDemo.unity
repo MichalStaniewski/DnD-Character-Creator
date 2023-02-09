@@ -80701,6 +80701,7 @@ MonoBehaviour:
   playerObj: {fileID: 1074193918}
   rb: {fileID: 1642622077}
   controller: {fileID: 1642622078}
+  camTransform: {fileID: 1419563609}
   moveSpeed: 6
   rotationSpeed: 6
   groundDrag: 5
