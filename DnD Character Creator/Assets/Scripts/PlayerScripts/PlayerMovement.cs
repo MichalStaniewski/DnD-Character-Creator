@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform camTransform;
 
+    [SerializeField] private Animator animator;
+
     [Header("Variables")]
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float rotationSpeed;
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (_direction.magnitude >= 0.1f)
         {
+            animator.SetBool("IsRunning", true);
+
             float _targetAngle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg + camTransform.eulerAngles.y;
             float _angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetAngle, ref turnSmoothVelocity, turnSmoothing); 
             transform.rotation = Quaternion.Euler(0f, _angle, 0f);
@@ -48,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(_moveDir.normalized * moveSpeed * Time.deltaTime);
         }
+        else
+        {
+            animator.SetBool("IsRunning", false);
+        }
+
         
         /*
         Vector3 _viewDirection = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
