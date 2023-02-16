@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Transform orientation;
+    [Header("References")]    
     [SerializeField] private Transform player;
     [SerializeField] private Transform playerObj;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform camTransform;
 
     [SerializeField] private CharacterController controller;
 
-    [SerializeField] private Transform camTransform;
-
     [SerializeField] private Animator animator;
 
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask groundMask;
 
+    [SerializeField] private PlayerCombat playerCombat;
 
     [Header("Variables")]
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float jumpHeight = 3f;
-    [SerializeField] private float rotationSpeed;
-    [SerializeField] private float groundDrag;
 
+    [SerializeField] private float groundCheckDistance;
     [SerializeField] private float gravity = -9.8f;
-    private Vector3 yVelocity;    
+
+    private Vector3 fallingVelocity;
     private bool isGrounded;
 
     private float turnSmoothing = 0.1f;
@@ -35,14 +33,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        controller = GetComponent<CharacterController>();
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     private void Start()
     {
+        controller = GetComponent<CharacterController>();
+        playerCombat = GetComponent<PlayerCombat>();
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -79,12 +77,19 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void PlayerAiming()
+    {
+        //move camera behind shoulder
+        //rotate player to look in direction they're aiming
+        //come up with a crosshair idea or a way to help aiming
+    }
+
     private void PlayerJump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             animator.SetTrigger("Jump");
-            yVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            fallingVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
 
@@ -92,7 +97,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            animator.SetTrigger("Attack");
+            playerCombat.Attack();
+            animator.SetTrigger("Attack");            
         }
     }
 
@@ -100,13 +106,13 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundMask);
 
-        if (isGrounded && yVelocity.y < 0)
+        if (isGrounded && fallingVelocity.y < 0)
         {
-            yVelocity.y = -4f;
+            fallingVelocity.y = -4f;
         }
 
-        yVelocity.y += gravity * Time.deltaTime;
+        fallingVelocity.y += gravity * Time.deltaTime;
 
-        controller.Move(yVelocity * Time.deltaTime);
+        controller.Move(fallingVelocity * Time.deltaTime);
     }
 }
