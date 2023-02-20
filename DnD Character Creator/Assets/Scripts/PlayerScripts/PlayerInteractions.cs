@@ -31,6 +31,8 @@ public class PlayerInteractions : MonoBehaviour
 
     public NPCInteractable PlayerInRangeOfInteractable()
     {
+        List<NPCInteractable> _npcInteractableList = new List<NPCInteractable>();
+
         Collider[] _collidersNearPlayer = Physics.OverlapSphere(transform.position, interactDistance, interactableLayer);
 
         foreach (Collider _colliders in _collidersNearPlayer)
@@ -40,6 +42,7 @@ public class PlayerInteractions : MonoBehaviour
                 return _nPCInteractable;
             }
         }
+
         return null;
     }
 }

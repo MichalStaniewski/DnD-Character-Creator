@@ -21830,7 +21830,7 @@ Transform:
   - {fileID: 1839017509}
   - {fileID: 1464301398}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &497022922
 PrefabInstance:
@@ -38867,7 +38867,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &787963109
 PrefabInstance:
@@ -43902,6 +43902,68 @@ Transform:
   m_Father: {fileID: 641968766}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &896240160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896240163}
+  - component: {fileID: 896240162}
+  - component: {fileID: 896240161}
+  m_Layer: 9
+  m_Name: NPC Jeff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &896240161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896240160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5138d1fcab22147408cdede381282191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcAnimator: {fileID: 1978503718}
+--- !u!136 &896240162
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896240160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!4 &896240163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896240160}
+  m_LocalRotation: {x: -0, y: -0.99144495, z: -0, w: 0.13052617}
+  m_LocalPosition: {x: -2.4959671, y: 2.663, z: -2.6127427}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1272825752}
+  - {fileID: 991482535}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: -165, z: 0}
 --- !u!1001 &896295833
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48310,6 +48372,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 498332, guid: 00ed5f0c12fd8d5499f54fb0096adab9, type: 3}
   m_PrefabInstance: {fileID: 990282969}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &991482534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 991482535}
+  - component: {fileID: 991482536}
+  m_Layer: 0
+  m_Name: NPCQuestGiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &991482535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991482534}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 896240163}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &991482536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991482534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d89da829c6b5ca4fb200b89644eee1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest:
+    isActive: 0
+    name: Chicken Defender
+    description: You are tasked with defending NPC Daves chickens which are under
+      attack from the local Skeleton Gang!
+    experianceGain: 500
+    goldGain: 20
 --- !u!1 &991615064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 135604, guid: 335f9f042781e494ab3ad14d24c8b719, type: 3}
@@ -56884,7 +56997,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172936560}
-  m_LocalRotation: {x: 0.012354897, y: -0.0000000016317819, z: 2.0162035e-11, w: 0.9999237}
+  m_LocalRotation: {x: 0.012354898, y: 2.4703214e-10, z: -3.0522926e-12, w: 0.9999237}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -61093,6 +61206,72 @@ MeshCollider:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 111638, guid: b1906e04b9f548148b786a8582d5a1f3, type: 3}
   m_PrefabInstance: {fileID: 1838238090}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1272825751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 896240163}
+    m_Modifications:
+    - target: {fileID: 1408258074504032, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_Name
+      value: Chr_Fantasy_King_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95160073132119122, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d0fb5ddbb55975c4494b0528d1b53f34, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+--- !u!4 &1272825752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4031988555910372, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+  m_PrefabInstance: {fileID: 1272825751}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1273418667
 PrefabInstance:
@@ -68901,7 +69080,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 5000
-  field of view: 80
+  field of view: 50
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -68926,8 +69105,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419563605}
-  m_LocalRotation: {x: 0, y: -0.067754045, z: 0, w: 0.99770206}
-  m_LocalPosition: {x: -3.349, y: 4.204, z: -12.113}
+  m_LocalRotation: {x: 0.012354894, y: 9.634596e-10, z: -1.1904346e-11, w: 0.9999237}
+  m_LocalPosition: {x: -4, y: 5, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88725,7 +88904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808457700}
   m_LocalRotation: {x: -0, y: -0.92387956, z: -0, w: 0.38268328}
-  m_LocalPosition: {x: -0.3667758, y: 2.663, z: -4.781922}
+  m_LocalPosition: {x: 0.72, y: 2.663, z: -5.86}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -98340,6 +98519,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 38bcd219b4105594a9e59c21c9b0e8f7, type: 3}
+--- !u!95 &1978503718 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95160073132119122, guid: eeb694852bd594d4a904c98702663ad3, type: 3}
+  m_PrefabInstance: {fileID: 1272825751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1983520662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 189700, guid: 8385b5d2216332940bc665cd517a4e3b, type: 3}
