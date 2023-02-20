@@ -10,5 +10,4 @@ public class Quest
     public string description;
     public int experianceGain;
     public int goldGain;
-
 }

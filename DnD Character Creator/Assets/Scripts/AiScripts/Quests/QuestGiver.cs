@@ -7,4 +7,13 @@ public class QuestGiver : MonoBehaviour
 {
     [SerializeField] private Quest quest;
     
+    public Quest GetQuest()
+    {
+        return quest;
+    }
+    
+    public void StartQuest()
+    {
+        
+    }
 }
