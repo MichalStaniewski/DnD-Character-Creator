@@ -10,4 +10,20 @@ public class Quest
     public string description;
     public int experianceGain;
     public int goldGain;
+
+    public QuestGoal goal;
+
+    public void CheckGoalProgress()
+    {
+        if (goal.IsReached())
+        {
+            Complete();
+        }
+    }
+
+    public void Complete()
+    {
+        isActive = false;
+        Debug.Log(name + " was completed!");
+    }
 }

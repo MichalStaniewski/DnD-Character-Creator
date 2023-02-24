@@ -6,6 +6,7 @@ using UnityEngine;
 public class QuestGiver : MonoBehaviour
 {
     [SerializeField] private Quest quest;
+    [SerializeField] private PlayerInteractions player;
     
     public Quest GetQuest()
     {
@@ -14,6 +15,6 @@ public class QuestGiver : MonoBehaviour
     
     public void StartQuest()
     {
-        
+        player.StartNewQuest(quest);
     }
 }

@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private float attackRange;
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private GameManager gameManager;
-    private int baseDamage = 5;
+    private int baseDamage = 10;
 
     private void Start()
     {
@@ -21,8 +21,8 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider _enemy in _enemiesHit)
         {
-            Debug.Log(_enemy.name);
-            _enemy.GetComponent<EnemyScript>().TakeDamage(CalculateDamage());
+            //Debug.Log(_enemy.name);
+            _enemy.GetComponent<I_Damageable>().TakeDamage(CalculateDamage());
         }
     }
 
@@ -31,9 +31,16 @@ public class PlayerCombat : MonoBehaviour
         int _raceStrength = gameManager.GetPlayerRace().GetStrength();
         int _classStrength = gameManager.GetPlayerClass().GetStrength();
 
-        int _playerDamage = baseDamage + _raceStrength + _classStrength;
+        int _damageRangeModifier = 3;
 
-        Debug.Log("Player damage: " + _playerDamage);
+        int _upperRange = baseDamage + _damageRangeModifier;
+        int _lowerRange = baseDamage - _damageRangeModifier;
+
+        int _damageRange = Random.Range(_lowerRange, _upperRange);
+
+        int _playerDamage = _damageRange + _raceStrength + _classStrength;
+
+        //Debug.Log("Player damage: " + _playerDamage);
 
         return _playerDamage;
     }
